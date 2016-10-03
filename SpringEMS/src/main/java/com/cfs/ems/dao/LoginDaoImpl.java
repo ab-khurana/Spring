@@ -17,6 +17,7 @@ public class LoginDaoImpl implements LoginDao {
 		
 		Status status = new Status();
 		System.out.println("inside dao");
+		System.out.println(lpo.getUsername());
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ems", "root", "root");
 		//		Statement stmt = con.createStatement();

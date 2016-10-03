@@ -38,21 +38,24 @@ public class LoginController {
 
 	}
 	@RequestMapping(value="/loginUser",method=RequestMethod.POST)
-	public ModelAndView welcome( Login login, @ModelAttribute("status")Status status) throws Exception {
+	public ModelAndView welcome( Login login, @ModelAttribute Status status) throws Exception {
 		//		LoginService loginService = new LoginServiceImpl() ;
 		status = loginService.login(login);
 		System.out.println(status.getEmpName());
+		System.out.println(login.getUsername());
 
 
 
 
 		if(status.getStatus()==1)
 		{
-			ModelAndView model = new ModelAndView("dashboard");
-			Map<String, String> map = new HashMap();
-			map.put("message", status.getEmpName());
+			ModelAndView model = new ModelAndView();
+			List< Status> message = new LinkedList<Status>();
+			message.add(status);
+			model.setViewName("dashboard");
+			model.addObject("message", message);
 			
-			model.addObject("status",map);
+//			model.addObject("status","Bro");
 			return model;
 		}
 

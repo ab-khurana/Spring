@@ -26,7 +26,7 @@
 					<%-- 	<font color="grey" style=""> Welcome admin  	${status} + " "		+ " with Employee ID as "
 									
 						 ! --%>
-					<h3>${status.empName}</h3>
+					<%-- <h3>${status}</h3> --%>
 				 
 
 						 

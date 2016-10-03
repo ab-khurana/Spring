@@ -10,7 +10,7 @@
 <body>
 	<%-- <%@include file="header.html"%> --%>
 
-	<h3>${status}</h3>
+	<h3>${message.firstName}</h3>
 	<table height="100px"> <tr><td><%@include file="linklist.jsp"%></td>
 	
 	</tr>
